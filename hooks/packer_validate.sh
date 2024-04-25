@@ -34,7 +34,7 @@ else
   packer_cmd="packer validate $options"
 fi
 
-for file in "$@"; do
+for file in "${files[@]}"; do
   if ! $packer_cmd "$file"; then
     error=1
     echo
